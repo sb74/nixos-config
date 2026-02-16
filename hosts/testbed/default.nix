@@ -4,11 +4,20 @@
   imports = [
     ./disko.nix
     ./hardware-configuration.nix
+
+    # Core
     ../../modules/core/boot.nix
     ../../modules/core/nix.nix
     ../../modules/core/networking.nix
     ../../modules/core/locale.nix
     ../../modules/core/users.nix
+
+    # Security
+    ../../modules/security
+
+    # Hardware
+    ../../modules/hardware/audio.nix
+    ../../modules/hardware/graphics.nix  # RTX 2070 Super
   ];
 
   networking.hostName = "testbed";
