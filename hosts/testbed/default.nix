@@ -15,6 +15,12 @@
     # Security
     ../../modules/security
 
+    # Desktop
+    ../../modules/desktop
+
+    # Theme
+    ../../modules/theme/stylix.nix
+
     # Hardware
     ../../modules/hardware/audio.nix
     ../../modules/hardware/graphics.nix  # RTX 2070 Super
