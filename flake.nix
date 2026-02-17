@@ -62,6 +62,18 @@
           ./hosts/pc
         ];
       };
+
+      laptop = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = { inherit inputs; };
+        modules = [
+          disko.nixosModules.disko
+          agenix.nixosModules.default
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          ./hosts/laptop
+        ];
+      };
     };
   };
 }
