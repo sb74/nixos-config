@@ -37,12 +37,13 @@
       # Scrollback
       scrollback-limit = 50000;
       mouse-scroll-multiplier = 3;
-    };
 
-    keybindings = {
-      "f11" = "toggle_fullscreen";
-      "shift+insert" = "paste_from_clipboard";
-      "ctrl+insert" = "copy_to_clipboard";
+      # Keybinds
+      keybind = [
+        "f11=toggle_fullscreen"
+        "shift+insert=paste_from_clipboard"
+        "ctrl+insert=copy_to_clipboard"
+      ];
     };
   };
 }
