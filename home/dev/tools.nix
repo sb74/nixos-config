@@ -26,7 +26,7 @@
   # vivid — generates LS_COLORS themes for eza/ls
   programs.vivid = {
     enable = true;
-    theme = "tokyo-night";
+    activeTheme = "tokyo-night";
   };
 
   programs.fd = {
