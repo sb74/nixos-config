@@ -71,9 +71,6 @@
     targets = {
       # Waybar has custom CSS with Tokyo Night colors
       waybar.enable = false;
-
-      # Hyprland has custom border/decoration colors
-      hyprland.enable = false;
     };
   };
 
@@ -81,6 +78,9 @@
   # Stylix handles GTK/Qt theming automatically when enabled
   # These are additional tweaks
   home-manager.users.sb74 = {
+    # Hyprland has custom border/decoration colors — disable Stylix theming
+    stylix.targets.hyprland.enable = false;
+
     gtk = {
       enable = true;
       gtk3.extraConfig = {
