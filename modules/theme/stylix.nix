@@ -66,12 +66,6 @@
       terminal = 0.95;
     };
 
-    # ── Target Overrides ──────────────────────────────────────
-    # Disable Stylix for apps with manual theming to avoid conflicts
-    targets = {
-      # Waybar has custom CSS with Tokyo Night colors
-      waybar.enable = false;
-    };
   };
 
   # ── GTK Theming (Home Manager) ────────────────────────────
