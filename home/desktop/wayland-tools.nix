@@ -9,6 +9,7 @@
     pwvucontrol     # PipeWire volume control GUI
     wev             # Wayland event viewer (debug keybinds)
     wtype           # Wayland keystroke simulator (for clipboard bindings)
+    networkmanagerapplet  # nm-connection-editor for waybar wifi click
   ];
 
   # SwayOSD — volume/brightness on-screen display

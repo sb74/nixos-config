@@ -88,6 +88,7 @@
           format-disconnected = "󰤮";
           format-icons = [ "󰤟" "󰤢" "󰤥" "󰤨" ];
           tooltip-format = "{essid} ({signalStrength}%)\n{ipaddr}/{cidr}";
+          on-click = "nm-connection-editor";
         };
 
         pulseaudio = {
