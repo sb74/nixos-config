@@ -8,10 +8,21 @@
     ./shell/atuin.nix
     ./shell/carapace.nix
     ./shell/direnv.nix
+    ./shell/ssh.nix
 
     # Dev
     ./dev/git.nix
+    ./dev/neovim.nix
     ./dev/tools.nix
+
+    # Apps
+    ./apps/browser.nix
+    ./apps/gaming.nix
+    ./apps/media.nix
+    ./apps/misc.nix
+
+    # Persistence
+    ./impermanence.nix
 
     # Desktop
     ./desktop/hyprland.nix

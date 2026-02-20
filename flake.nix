@@ -30,9 +30,14 @@
     };
 
     impermanence.url = "github:nix-community/impermanence";
+
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, disko, stylix, hyprland, agenix, impermanence, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, disko, stylix, hyprland, agenix, impermanence, lanzaboote, ... }@inputs:
   let
     system = "x86_64-linux";
     lib = import ./lib { inherit inputs; };
@@ -46,6 +51,7 @@
           disko.nixosModules.disko
           agenix.nixosModules.default
           stylix.nixosModules.stylix
+          impermanence.nixosModules.impermanence
           home-manager.nixosModules.home-manager
           ./hosts/testbed
         ];
@@ -58,6 +64,8 @@
           disko.nixosModules.disko
           agenix.nixosModules.default
           stylix.nixosModules.stylix
+          impermanence.nixosModules.impermanence
+          lanzaboote.nixosModules.lanzaboote
           home-manager.nixosModules.home-manager
           ./hosts/pc
         ];
@@ -70,6 +78,7 @@
           disko.nixosModules.disko
           agenix.nixosModules.default
           stylix.nixosModules.stylix
+          impermanence.nixosModules.impermanence
           home-manager.nixosModules.home-manager
           ./hosts/laptop
         ];

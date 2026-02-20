@@ -1,11 +1,9 @@
-# Agenix secrets mapping
-# Add SSH public keys for hosts/users that can decrypt secrets
-# let
-#   testbed = "ssh-ed25519 AAAA... root@testbed";
-#   sb74 = "ssh-ed25519 AAAA... sb74@testbed";
-# in
-# {
-#   "wifi.age".publicKeys = [ testbed sb74 ];
-#   "user-password.age".publicKeys = [ testbed sb74 ];
-# }
-{ }
+let
+  keys = import ../keys.nix;
+  inherit (keys) sb74 testbed pc laptop;
+in
+{
+  "user-password-testbed.age".publicKeys = [ sb74 testbed ];
+  "user-password-pc.age".publicKeys      = [ sb74 pc ];
+  "user-password-laptop.age".publicKeys  = [ sb74 laptop ];
+}

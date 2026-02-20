@@ -19,7 +19,14 @@
     extraOptions = [
       "--group-directories-first"
       "--header"
+      "--color=always"
     ];
+  };
+
+  # vivid — generates LS_COLORS themes for eza/ls
+  programs.vivid = {
+    enable = true;
+    theme = "tokyo-night";
   };
 
   programs.fd = {
@@ -83,6 +90,7 @@
     bandwhich      # bandwidth monitor
 
     # Dev tools
+    claude-code    # AI pair programming CLI
     lazydocker     # Docker TUI
     tokei          # Code statistics
     hyperfine      # Benchmarking
@@ -101,7 +109,8 @@
     dig
 
     # Nix tools
-    nix-output-monitor  # nom — prettier nix build output
+    nh                  # Nix helper — best-in-class rebuild wrapper
+    nix-output-monitor  # nom — prettier nix build output (used by nh)
     nvd                 # Nix version diff (compare generations)
     nix-tree            # Visualise nix store deps
   ];

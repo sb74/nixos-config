@@ -11,12 +11,16 @@
     ../../modules/core/networking.nix
     ../../modules/core/locale.nix
     ../../modules/core/users.nix
+    ../../modules/core/impermanence.nix
 
     # Security
     ../../modules/security
 
     # Desktop
     ../../modules/desktop
+
+    # Services
+    ../../modules/services
 
     # Theme
     ../../modules/theme/stylix.nix
@@ -29,6 +33,9 @@
   ];
 
   networking.hostName = "laptop";
+
+  # Agenix secrets — uncomment after first boot once host SSH key is in secrets.nix
+  # age.secrets.user-password.file = ../../secrets/user-password-laptop.age;
 
   # Intel GPU — Mesa handles everything
   hardware.graphics = {

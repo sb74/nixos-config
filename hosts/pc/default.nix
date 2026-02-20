@@ -11,12 +11,18 @@
     ../../modules/core/networking.nix
     ../../modules/core/locale.nix
     ../../modules/core/users.nix
+    ../../modules/core/impermanence.nix
+    ../../modules/core/secureboot.nix
 
     # Security
     ../../modules/security
 
     # Desktop
     ../../modules/desktop
+
+    # Services
+    ../../modules/services
+    ../../modules/services/gaming.nix
 
     # Theme
     ../../modules/theme/stylix.nix
@@ -28,6 +34,9 @@
   ];
 
   networking.hostName = "pc";
+
+  # Agenix secrets — uncomment after first boot once host SSH key is in secrets.nix
+  # age.secrets.user-password.file = ../../secrets/user-password-pc.age;
 
   # Home Manager
   home-manager = {

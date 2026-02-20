@@ -5,6 +5,8 @@
   home.packages = with pkgs; [
     hyprpicker      # Color picker
     brightnessctl   # Backlight control
+    playerctl       # Media key control (play/pause/next/prev)
+    pwvucontrol     # PipeWire volume control GUI
     wev             # Wayland event viewer (debug keybinds)
     wtype           # Wayland keystroke simulator (for clipboard bindings)
   ];

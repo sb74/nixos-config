@@ -46,6 +46,10 @@
                       mountOptions = [ "compress=zstd" "noatime" ];
                     };
                     "@root-blank" = { };
+                    "@persist" = {
+                      mountpoint = "/persist";
+                      mountOptions = [ "compress=zstd" "noatime" ];
+                    };
                   };
                 };
               };

@@ -4,7 +4,14 @@
   programs.git = {
     enable = true;
     userName = "sb74";
-    userEmail = "";  # TODO: set your email
+    userEmail = "snbr74@gmail.com";
+
+    lfs.enable = true;
+
+    signing = {
+      key = "~/.ssh/id_ed25519.pub";
+      signByDefault = true;
+    };
 
     delta = {
       enable = true;
@@ -17,6 +24,7 @@
     };
 
     extraConfig = {
+      gpg.format = "ssh";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       pull.rebase = true;
@@ -24,8 +32,6 @@
       rerere.enabled = true;
       diff.colorMoved = "default";
       core.autocrlf = "input";
-
-      # URL shortcuts
       url."git@github.com:".insteadOf = "gh:";
     };
 
