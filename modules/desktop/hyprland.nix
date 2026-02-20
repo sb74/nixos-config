@@ -1,11 +1,13 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # Hyprland compositor — system-level
+  # Hyprland compositor — system-level, using flake for latest version
   programs.hyprland = {
     enable = true;
-    withUWSM = true;   # Recommended systemd session management
+    withUWSM = true;
     xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   # XDG Desktop Portal — file pickers, screen sharing

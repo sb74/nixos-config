@@ -29,7 +29,7 @@
 
     # Hardware
     ../../modules/hardware/audio.nix
-    ../../modules/hardware/graphics.nix  # NVIDIA — adjust package per GPU
+    ../../modules/hardware/graphics.nix  # RTX 3070 LHR
     ../../modules/hardware/bluetooth.nix
   ];
 

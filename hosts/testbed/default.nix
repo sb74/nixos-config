@@ -27,7 +27,7 @@
 
     # Hardware
     ../../modules/hardware/audio.nix
-    ../../modules/hardware/graphics.nix  # RTX 2070 Super
+    ../../modules/hardware/graphics.nix  # RTX 2080 Super
   ];
 
   networking.hostName = "testbed";
