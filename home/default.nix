@@ -9,6 +9,7 @@
     ./shell/carapace.nix
     ./shell/direnv.nix
     ./shell/ssh.nix
+    ./shell/zellij.nix
 
     # Dev
     ./dev/git.nix

@@ -42,6 +42,6 @@
   # Extra packages for NVIDIA + Wayland
   environment.systemPackages = with pkgs; [
     egl-wayland
-    libva-nvidia-driver
+    nvidia-vaapi-driver  # VAAPI hardware video decode/encode via NVIDIA
   ];
 }
