@@ -2,9 +2,7 @@
 
 {
   # Home-level persistence — declared paths survive root rollback via bind mounts
-  home.persistence."/persist/home/sb74" = {
-    allowOther = true;
-
+  home.persistence."/persist" = {
     directories = [
       # Identity & auth
       ".ssh"

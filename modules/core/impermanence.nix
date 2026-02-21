@@ -21,13 +21,9 @@
     '';
   };
 
-  # FUSE — allow_other needed for home persistence bind mounts
-  programs.fuse.userAllowOther = true;
-
-  # Wire home-manager impermanence module into all users
-  home-manager.sharedModules = [
-    inputs.impermanence.nixosModules.home-manager.impermanence
-  ];
+  # Required by impermanence — persistence paths must be available early
+  fileSystems."/persist".neededForBoot = true;
+  fileSystems."/home".neededForBoot = true;
 
   # System-level persistence — everything here survives reboots
   environment.persistence."/persist" = {
