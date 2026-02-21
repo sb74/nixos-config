@@ -4,10 +4,7 @@
   # Modern CLI replacements
   programs.bat = {
     enable = true;
-    config = {
-      theme = "TwoDark";
-      style = "numbers,changes,header";
-    };
+    config.style = "numbers,changes,header";
   };
 
   programs.eza = {
