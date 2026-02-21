@@ -9,6 +9,20 @@
 
   security.pam.services.su.requireWheel = true;
 
+  # hyprlock — must exist or every unlock attempt fails
+  security.pam.services.hyprlock = {};
+
+  # gnome-keyring — unlock on login so apps (Spotify, etc.) don't prompt repeatedly
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
+
+  # 1Password — GUI + SSH agent + browser extension + polkit
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "sb74" ];
+  };
+
   # Process limits
   security.pam.loginLimits = [
     { domain = "*"; type = "soft"; item = "nofile"; value = "8192"; }
