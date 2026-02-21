@@ -50,6 +50,18 @@
       $env.DOCKER_HOST = "unix:///run/user/1000/podman/podman.sock"
     '';
 
+    # Zellij integration (no HM enableNushellIntegration for zellij)
+    extraConfig = ''
+      # Zellij — attach to/create session 0, or bail if already inside one
+      def zj [] {
+        if "ZELLIJ" in $env {
+          print "Already inside a zellij session"
+        } else {
+          zellij attach --index 0 --create
+        }
+      }
+    '';
+
     # Aliases
     shellAliases = {
       ll = "ls -l";

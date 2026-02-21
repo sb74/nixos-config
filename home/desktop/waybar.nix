@@ -125,63 +125,67 @@
       };
     };
 
-    style = ''
-      * {
-        font-family: 'CaskaydiaMono Nerd Font';
-        font-size: 12px;
-        min-height: 0;
-      }
+    style =
+      let
+        c = config.lib.stylix.colors;
+      in
+      ''
+        * {
+          font-family: 'CaskaydiaMono Nerd Font';
+          font-size: 12px;
+          min-height: 0;
+        }
 
-      window#waybar {
-        background-color: rgba(26, 27, 38, 0.9);
-        border-radius: 10px;
-        color: #a9b1d6;
-      }
+        window#waybar {
+          background-color: rgba(${c.base00-rgb-r}, ${c.base00-rgb-g}, ${c.base00-rgb-b}, 0.9);
+          border-radius: 10px;
+          color: #${c.base05};
+        }
 
-      #workspaces button {
-        padding: 0 6px;
-        color: #787c99;
-        border-bottom: 2px solid transparent;
-      }
+        #workspaces button {
+          padding: 0 6px;
+          color: #${c.base04};
+          border-bottom: 2px solid transparent;
+        }
 
-      #workspaces button.active {
-        color: #7aa2f7;
-        border-bottom: 2px solid #7aa2f7;
-      }
+        #workspaces button.active {
+          color: #${c.base0D};
+          border-bottom: 2px solid #${c.base0D};
+        }
 
-      #workspaces button:hover {
-        background: rgba(122, 162, 247, 0.2);
-      }
+        #workspaces button:hover {
+          background: rgba(${c.base0D-rgb-r}, ${c.base0D-rgb-g}, ${c.base0D-rgb-b}, 0.2);
+        }
 
-      #window {
-        margin-left: 12px;
-        opacity: 0.6;
-        font-style: italic;
-      }
+        #window {
+          margin-left: 12px;
+          opacity: 0.6;
+          font-style: italic;
+        }
 
-      #clock {
-        font-weight: bold;
-      }
+        #clock {
+          font-weight: bold;
+        }
 
-      #idle_inhibitor.activated {
-        color: #e0af68;
-      }
+        #idle_inhibitor.activated {
+          color: #${c.base0A};
+        }
 
-      #mpris.paused {
-        opacity: 0.4;
-      }
+        #mpris.paused {
+          opacity: 0.4;
+        }
 
-      #tray,
-      #bluetooth,
-      #network,
-      #pulseaudio,
-      #disk,
-      #memory,
-      #cpu,
-      #idle_inhibitor,
-      #mpris {
-        padding: 0 8px;
-      }
-    '';
+        #tray,
+        #bluetooth,
+        #network,
+        #pulseaudio,
+        #disk,
+        #memory,
+        #cpu,
+        #idle_inhibitor,
+        #mpris {
+          padding: 0 8px;
+        }
+      '';
   };
 }
