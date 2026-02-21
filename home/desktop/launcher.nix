@@ -1,48 +1,37 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
-  # Walker — app launcher with prefix system
-  home.packages = with pkgs; [
-    walker
-  ];
+  imports = [ inputs.walker.homeManagerModules.default ];
 
-  # Walker config — TOML format
-  xdg.configFile."walker/config.toml".text = ''
-    [search]
-    placeholder = "Search..."
-    delay = 0
-    force_keyboard_focus = true
-    history = true
+  programs.walker = {
+    enable = true;
+    runAsService = true;
 
-    [list]
-    max_entries = 256
-    show_initial_entries = true
+    config = {
+      search = {
+        placeholder = "Search...";
+        delay = 0;
+        force_keyboard_focus = true;
+        history = true;
+      };
 
-    [activation_mode]
-    disabled = false
+      list = {
+        max_entries = 256;
+        show_initial_entries = true;
+      };
 
-    [[modules]]
-    name = "applications"
-    prefix = ""
+      activation_mode.disabled = false;
 
-    [[modules]]
-    name = "websearch"
-    prefix = "@"
-
-    [[modules]]
-    name = "calc"
-    prefix = "="
-
-    [[modules]]
-    name = "clipboard"
-    prefix = "$"
-
-    [[modules]]
-    name = "finder"
-    prefix = "."
-
-    [[modules]]
-    name = "symbols"
-    prefix = ":"
-  '';
+      # Prefix-based module routing
+      modules = [
+        { name = "applications"; prefix = ""; }
+        { name = "websearch";    prefix = "@"; }
+        { name = "calc";         prefix = "="; }
+        { name = "clipboard";    prefix = "$"; }
+        { name = "finder";       prefix = "."; }
+        { name = "symbols";      prefix = ":"; }
+        { name = "runner";       prefix = "!"; }  # elephant AI search
+      ];
+    };
+  };
 }

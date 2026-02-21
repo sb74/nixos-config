@@ -1,5 +1,17 @@
 { config, pkgs, lib, ... }:
 
+let
+  showKeybinds = pkgs.writeShellScript "hypr-keybinds" ''
+    hyprctl binds -j | ${pkgs.jq}/bin/jq -r '
+      ["# Keybindings", ""] +
+      [.[] | select(.description != "") |
+        "- **\(.modmask) + \(.key)**: \(.description)"]
+      | join("\n")
+    ' | ${pkgs.glow}/bin/glow -
+    read -n1
+  '';
+in
+
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -87,6 +99,10 @@
       windowrulev2 = [
         "suppressevent maximize, class:.*"
         "opacity 0.97 0.9, class:.*"
+        # Keybind cheat sheet popup
+        "float, class:hyprkeys"
+        "size 900 600, class:hyprkeys"
+        "center, class:hyprkeys"
       ];
 
       # ── Autostart ─────────────────────────────────────────────
@@ -221,6 +237,7 @@
 
         # ── Launcher ──
         "$mod, SPACE, exec, walker"
+        "$mod, F1, exec, ghostty --class=hyprkeys -e ${showKeybinds}"
 
         # ── Clipboard ──
         "$mod, C, exec, wtype -M ctrl -k Insert -m ctrl"

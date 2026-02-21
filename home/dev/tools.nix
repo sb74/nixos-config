@@ -89,6 +89,7 @@
     yq             # YAML processor
 
     # File tools
+    glow           # Markdown renderer (used for keybind cheat sheet)
     file           # File type detection
     unzip
     p7zip
