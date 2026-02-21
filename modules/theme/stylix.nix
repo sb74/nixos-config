@@ -72,8 +72,9 @@
   # Stylix handles GTK/Qt theming automatically when enabled
   # These are additional tweaks
   home-manager.users.sb74 = {
-    # Hyprland has custom border/decoration colors — disable Stylix theming
+    # Custom configs — disable Stylix theming for these
     stylix.targets.hyprland.enable = false;
+    stylix.targets.hyprlock.enable = false;
 
     gtk = {
       enable = true;
