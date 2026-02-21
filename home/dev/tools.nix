@@ -23,12 +23,6 @@
     ];
   };
 
-  # vivid — generates LS_COLORS themes for eza/ls
-  programs.vivid = {
-    enable = true;
-    activeTheme = "tokyo-night";
-  };
-
   programs.fd = {
     enable = true;
     hidden = true;
@@ -62,6 +56,7 @@
     enable = true;
     enableNushellIntegration = true;
     enableBashIntegration = true;
+    shellWrapperName = "y";
   };
 
   programs.zoxide = {
