@@ -126,142 +126,140 @@ in
 
       "$mod" = "SUPER";
 
-      bind = [
+      bindd = [
         # ── App Launchers ──
-        "$mod, RETURN, exec, uwsm app -- ghostty"
-        "$mod SHIFT, F, exec, thunar"
-        "$mod SHIFT, B, exec, firefox"
-        "$mod SHIFT ALT, B, exec, firefox --private-window"
-        "$mod SHIFT, M, exec, spotify"
-        "$mod SHIFT, N, exec, uwsm app -- ghostty -e nvim"
-        "$mod SHIFT, T, exec, uwsm app -- ghostty -e btop"
-        "$mod SHIFT, D, exec, uwsm app -- ghostty -e lazydocker"
-        "$mod SHIFT, O, exec, obsidian --disable-gpu --enable-wayland-ime"
-        "$mod SHIFT, slash, exec, 1password"
+        "$mod, RETURN, Open terminal, exec, uwsm app -- ghostty"
+        "$mod SHIFT, F, Open file manager, exec, thunar"
+        "$mod SHIFT, B, Open browser, exec, firefox"
+        "$mod SHIFT ALT, B, Open private browser, exec, firefox --private-window"
+        "$mod SHIFT, M, Open music, exec, spotify"
+        "$mod SHIFT, N, Open editor, exec, uwsm app -- ghostty -e nvim"
+        "$mod SHIFT, T, Open system monitor, exec, uwsm app -- ghostty -e btop"
+        "$mod SHIFT, D, Open Docker TUI, exec, uwsm app -- ghostty -e lazydocker"
+        "$mod SHIFT, O, Open Obsidian, exec, obsidian --disable-gpu --enable-wayland-ime"
+        "$mod SHIFT, slash, Open 1Password, exec, 1password"
 
-        # ── Web Apps (Firefox) ──
-        "$mod SHIFT, A, exec, firefox --new-window https://chatgpt.com"
-        "$mod SHIFT ALT, A, exec, firefox --new-window https://grok.com"
-        "$mod SHIFT, C, exec, firefox --new-window https://app.hey.com/calendar"
-        "$mod SHIFT, E, exec, firefox --new-window https://app.hey.com"
-        "$mod SHIFT, Y, exec, firefox --new-window https://youtube.com"
-        "$mod SHIFT ALT, G, exec, firefox --new-window https://web.whatsapp.com"
-        "$mod SHIFT CTRL, G, exec, firefox --new-window https://messages.google.com"
-        "$mod SHIFT, X, exec, firefox --new-window https://x.com"
-        "$mod SHIFT ALT, X, exec, firefox --new-window https://x.com/compose/post"
+        # ── Web Apps ──
+        "$mod SHIFT, A, Open ChatGPT, exec, firefox --new-window https://chatgpt.com"
+        "$mod SHIFT ALT, A, Open Grok, exec, firefox --new-window https://grok.com"
+        "$mod SHIFT, C, Open calendar, exec, firefox --new-window https://app.hey.com/calendar"
+        "$mod SHIFT, E, Open email, exec, firefox --new-window https://app.hey.com"
+        "$mod SHIFT, Y, Open YouTube, exec, firefox --new-window https://youtube.com"
+        "$mod SHIFT ALT, G, Open WhatsApp, exec, firefox --new-window https://web.whatsapp.com"
+        "$mod SHIFT CTRL, G, Open Google Messages, exec, firefox --new-window https://messages.google.com"
+        "$mod SHIFT, X, Open X, exec, firefox --new-window https://x.com"
+        "$mod SHIFT ALT, X, Compose post, exec, firefox --new-window https://x.com/compose/post"
 
         # ── Window Management ──
-        "$mod, W, killactive"
-        "CTRL ALT, DELETE, exec, hyprctl dispatch closewindow"
-        "$mod, J, togglesplit"
-        "$mod, P, pseudo"
-        "$mod, T, togglefloating"
-        "$mod, F, fullscreen, 0"
-        "$mod CTRL, F, fullscreen, 1"
-        "$mod ALT, F, fullscreenstate, -1 2"
-        "$mod, O, pin"
+        "$mod, W, Close window, killactive"
+        "CTRL ALT, DELETE, Force close window, exec, hyprctl dispatch closewindow"
+        "$mod, J, Toggle split, togglesplit"
+        "$mod, P, Toggle pseudo-tile, pseudo"
+        "$mod, T, Toggle floating, togglefloating"
+        "$mod, F, Fullscreen, fullscreen, 0"
+        "$mod CTRL, F, Maximize, fullscreen, 1"
+        "$mod ALT, F, Fake fullscreen, fullscreenstate, -1 2"
+        "$mod, O, Pin window, pin"
 
         # ── Focus ──
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
-        "ALT, TAB, cyclenext"
-        "ALT SHIFT, TAB, cyclenext, prev"
+        "$mod, left, Focus left, movefocus, l"
+        "$mod, right, Focus right, movefocus, r"
+        "$mod, up, Focus up, movefocus, u"
+        "$mod, down, Focus down, movefocus, d"
+        "ALT, TAB, Cycle next window, cyclenext"
+        "ALT SHIFT, TAB, Cycle previous window, cyclenext, prev"
 
         # ── Workspaces ──
-        "$mod, 1, workspace, 1"
-        "$mod, 2, workspace, 2"
-        "$mod, 3, workspace, 3"
-        "$mod, 4, workspace, 4"
-        "$mod, 5, workspace, 5"
-        "$mod, 6, workspace, 6"
-        "$mod, 7, workspace, 7"
-        "$mod, 8, workspace, 8"
-        "$mod, 9, workspace, 9"
-        "$mod, 0, workspace, 10"
+        "$mod, 1, Switch to workspace 1, workspace, 1"
+        "$mod, 2, Switch to workspace 2, workspace, 2"
+        "$mod, 3, Switch to workspace 3, workspace, 3"
+        "$mod, 4, Switch to workspace 4, workspace, 4"
+        "$mod, 5, Switch to workspace 5, workspace, 5"
+        "$mod, 6, Switch to workspace 6, workspace, 6"
+        "$mod, 7, Switch to workspace 7, workspace, 7"
+        "$mod, 8, Switch to workspace 8, workspace, 8"
+        "$mod, 9, Switch to workspace 9, workspace, 9"
+        "$mod, 0, Switch to workspace 10, workspace, 10"
 
         # ── Move to Workspace ──
-        "$mod SHIFT, 1, movetoworkspace, 1"
-        "$mod SHIFT, 2, movetoworkspace, 2"
-        "$mod SHIFT, 3, movetoworkspace, 3"
-        "$mod SHIFT, 4, movetoworkspace, 4"
-        "$mod SHIFT, 5, movetoworkspace, 5"
-        "$mod SHIFT, 6, movetoworkspace, 6"
-        "$mod SHIFT, 7, movetoworkspace, 7"
-        "$mod SHIFT, 8, movetoworkspace, 8"
-        "$mod SHIFT, 9, movetoworkspace, 9"
-        "$mod SHIFT, 0, movetoworkspace, 10"
+        "$mod SHIFT, 1, Move to workspace 1, movetoworkspace, 1"
+        "$mod SHIFT, 2, Move to workspace 2, movetoworkspace, 2"
+        "$mod SHIFT, 3, Move to workspace 3, movetoworkspace, 3"
+        "$mod SHIFT, 4, Move to workspace 4, movetoworkspace, 4"
+        "$mod SHIFT, 5, Move to workspace 5, movetoworkspace, 5"
+        "$mod SHIFT, 6, Move to workspace 6, movetoworkspace, 6"
+        "$mod SHIFT, 7, Move to workspace 7, movetoworkspace, 7"
+        "$mod SHIFT, 8, Move to workspace 8, movetoworkspace, 8"
+        "$mod SHIFT, 9, Move to workspace 9, movetoworkspace, 9"
+        "$mod SHIFT, 0, Move to workspace 10, movetoworkspace, 10"
 
         # ── Move Silently ──
-        "$mod SHIFT ALT, 1, movetoworkspacesilent, 1"
-        "$mod SHIFT ALT, 2, movetoworkspacesilent, 2"
-        "$mod SHIFT ALT, 3, movetoworkspacesilent, 3"
-        "$mod SHIFT ALT, 4, movetoworkspacesilent, 4"
-        "$mod SHIFT ALT, 5, movetoworkspacesilent, 5"
-        "$mod SHIFT ALT, 6, movetoworkspacesilent, 6"
-        "$mod SHIFT ALT, 7, movetoworkspacesilent, 7"
-        "$mod SHIFT ALT, 8, movetoworkspacesilent, 8"
-        "$mod SHIFT ALT, 9, movetoworkspacesilent, 9"
-        "$mod SHIFT ALT, 0, movetoworkspacesilent, 10"
+        "$mod SHIFT ALT, 1, Move silently to workspace 1, movetoworkspacesilent, 1"
+        "$mod SHIFT ALT, 2, Move silently to workspace 2, movetoworkspacesilent, 2"
+        "$mod SHIFT ALT, 3, Move silently to workspace 3, movetoworkspacesilent, 3"
+        "$mod SHIFT ALT, 4, Move silently to workspace 4, movetoworkspacesilent, 4"
+        "$mod SHIFT ALT, 5, Move silently to workspace 5, movetoworkspacesilent, 5"
+        "$mod SHIFT ALT, 6, Move silently to workspace 6, movetoworkspacesilent, 6"
+        "$mod SHIFT ALT, 7, Move silently to workspace 7, movetoworkspacesilent, 7"
+        "$mod SHIFT ALT, 8, Move silently to workspace 8, movetoworkspacesilent, 8"
+        "$mod SHIFT ALT, 9, Move silently to workspace 9, movetoworkspacesilent, 9"
+        "$mod SHIFT ALT, 0, Move silently to workspace 10, movetoworkspacesilent, 10"
 
         # ── Workspace Navigation ──
-        "$mod, TAB, workspace, m+1"
-        "$mod SHIFT, TAB, workspace, m-1"
-        "$mod CTRL, TAB, workspace, previous"
+        "$mod, TAB, Next workspace, workspace, m+1"
+        "$mod SHIFT, TAB, Previous workspace, workspace, m-1"
+        "$mod CTRL, TAB, Last workspace, workspace, previous"
 
         # ── Scratchpad ──
-        "$mod, S, togglespecialworkspace, scratchpad"
-        "$mod ALT, S, movetoworkspace, special:scratchpad"
+        "$mod, S, Toggle scratchpad, togglespecialworkspace, scratchpad"
+        "$mod ALT, S, Move to scratchpad, movetoworkspace, special:scratchpad"
 
         # ── Multi-Monitor ──
-        "$mod SHIFT ALT, left, movecurrentworkspacetomonitor, l"
-        "$mod SHIFT ALT, right, movecurrentworkspacetomonitor, r"
+        "$mod SHIFT ALT, left, Move workspace to left monitor, movecurrentworkspacetomonitor, l"
+        "$mod SHIFT ALT, right, Move workspace to right monitor, movecurrentworkspacetomonitor, r"
 
         # ── Window Swap ──
-        "$mod SHIFT, left, swapwindow, l"
-        "$mod SHIFT, right, swapwindow, r"
-        "$mod SHIFT, up, swapwindow, u"
-        "$mod SHIFT, down, swapwindow, d"
+        "$mod SHIFT, left, Swap window left, swapwindow, l"
+        "$mod SHIFT, right, Swap window right, swapwindow, r"
+        "$mod SHIFT, up, Swap window up, swapwindow, u"
+        "$mod SHIFT, down, Swap window down, swapwindow, d"
 
         # ── Resize ──
-        "$mod, minus, splitratio, -0.1"
-        "$mod, equal, splitratio, +0.1"
+        "$mod, minus, Shrink window, splitratio, -0.1"
+        "$mod, equal, Grow window, splitratio, +0.1"
 
         # ── Groups ──
-        "$mod, G, togglegroup"
-        "$mod ALT, G, moveoutofgroup"
-        "$mod ALT, TAB, changegroupactive, f"
-        "$mod CTRL, left, changegroupactive, b"
-        "$mod CTRL, right, changegroupactive, f"
+        "$mod, G, Toggle group, togglegroup"
+        "$mod ALT, G, Move out of group, moveoutofgroup"
+        "$mod ALT, TAB, Next in group, changegroupactive, f"
+        "$mod CTRL, left, Previous in group, changegroupactive, b"
+        "$mod CTRL, right, Next in group, changegroupactive, f"
 
         # ── Launcher ──
-        "$mod, SPACE, exec, walker"
-        "$mod, F1, exec, ghostty --class=hyprkeys -e ${showKeybinds}"
+        "$mod, SPACE, Open launcher, exec, walker"
+        "$mod, F1, Show keybindings, exec, ghostty --class=hyprkeys -e ${showKeybinds}"
 
         # ── Clipboard ──
-        "$mod, C, exec, wtype -M ctrl -k Insert -m ctrl"
-        "$mod, V, exec, wtype -M shift -k Insert -m shift"
-        "$mod, X, exec, wtype -M ctrl -k x -m ctrl"
-        "$mod CTRL, V, exec, cliphist list | walker --dmenu | cliphist decode | wl-copy"
+        "$mod, C, Copy, exec, wtype -M ctrl -k Insert -m ctrl"
+        "$mod, V, Paste, exec, wtype -M shift -k Insert -m shift"
+        "$mod, X, Cut, exec, wtype -M ctrl -k x -m ctrl"
+        "$mod CTRL, V, Clipboard history, exec, cliphist list | walker --dmenu | cliphist decode | wl-copy"
 
-        # ── Notifications (swaync) ──
-        "$mod, comma, exec, swaync-client -C -sw"
-        "$mod SHIFT, comma, exec, swaync-client --close-all"
-        "$mod CTRL, comma, exec, swaync-client -d -sw"
-        "$mod ALT, comma, exec, swaync-client -t -sw"
+        # ── Notifications ──
+        "$mod, comma, Clear notifications, exec, swaync-client -C -sw"
+        "$mod SHIFT, comma, Close all notifications, exec, swaync-client --close-all"
+        "$mod CTRL, comma, Do not disturb, exec, swaync-client -d -sw"
+        "$mod ALT, comma, Toggle notification panel, exec, swaync-client -t -sw"
 
         # ── Captures ──
-        ", Print, exec, grim -g \"$(slurp)\" - | satty --filename -"
-        "SHIFT, Print, exec, grim -g \"$(slurp)\" - | wl-copy"
-        "$mod, Print, exec, hyprpicker -a"
+        ", Print, Screenshot region, exec, grim -g \"$(slurp)\" - | satty --filename -"
+        "SHIFT, Print, Screenshot to clipboard, exec, grim -g \"$(slurp)\" - | wl-copy"
+        "$mod, Print, Color picker, exec, hyprpicker -a"
 
         # ── System ──
-        "$mod CTRL, L, exec, hyprlock"
-        "$mod SHIFT, SPACE, exec, pkill -SIGUSR1 waybar"
-
-        # ── Bar/Aesthetics ──
-        "$mod, BACKSPACE, exec, hyprctl keyword decoration:active_opacity $(hyprctl getoption decoration:active_opacity | grep float | awk '{if ($2 == 1.0) print 0.97; else print 1.0}')"
+        "$mod CTRL, L, Lock screen, exec, hyprlock"
+        "$mod SHIFT, SPACE, Toggle waybar, exec, pkill -SIGUSR1 waybar"
+        "$mod, BACKSPACE, Toggle opacity, exec, hyprctl keyword decoration:active_opacity $(hyprctl getoption decoration:active_opacity | grep float | awk '{if ($2 == 1.0) print 0.97; else print 1.0}')"
       ];
 
       # ── Mouse Bindings ──
@@ -270,25 +268,26 @@ in
         "$mod, mouse:273, resizewindow"
       ];
 
-      # ── Media Keys ──
-      bindel = [
-        ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
-        ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
-        ", XF86MonitorBrightnessUp, exec, swayosd-client --brightness raise"
-        ", XF86MonitorBrightnessDown, exec, swayosd-client --brightness lower"
-        "ALT, XF86AudioRaiseVolume, exec, swayosd-client --output-volume +1"
-        "ALT, XF86AudioLowerVolume, exec, swayosd-client --output-volume -1"
-        "ALT, XF86MonitorBrightnessUp, exec, swayosd-client --brightness +1"
-        "ALT, XF86MonitorBrightnessDown, exec, swayosd-client --brightness -1"
+      # ── Media Keys (repeatable) ──
+      bindeld = [
+        ", XF86AudioRaiseVolume, Volume up, exec, swayosd-client --output-volume raise"
+        ", XF86AudioLowerVolume, Volume down, exec, swayosd-client --output-volume lower"
+        ", XF86MonitorBrightnessUp, Brightness up, exec, swayosd-client --brightness raise"
+        ", XF86MonitorBrightnessDown, Brightness down, exec, swayosd-client --brightness lower"
+        "ALT, XF86AudioRaiseVolume, Volume up (fine), exec, swayosd-client --output-volume +1"
+        "ALT, XF86AudioLowerVolume, Volume down (fine), exec, swayosd-client --output-volume -1"
+        "ALT, XF86MonitorBrightnessUp, Brightness up (fine), exec, swayosd-client --brightness +1"
+        "ALT, XF86MonitorBrightnessDown, Brightness down (fine), exec, swayosd-client --brightness -1"
       ];
 
-      bindl = [
-        ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
-        ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPrev, exec, playerctl previous"
-        "$mod, XF86AudioMute, exec, swayosd-client --output-volume toggle-default"
+      # ── Media Keys (lock-screen) ──
+      bindld = [
+        ", XF86AudioMute, Mute audio, exec, swayosd-client --output-volume mute-toggle"
+        ", XF86AudioMicMute, Mute mic, exec, swayosd-client --input-volume mute-toggle"
+        ", XF86AudioPlay, Play/pause, exec, playerctl play-pause"
+        ", XF86AudioNext, Next track, exec, playerctl next"
+        ", XF86AudioPrev, Previous track, exec, playerctl previous"
+        "$mod, XF86AudioMute, Switch audio output, exec, swayosd-client --output-volume toggle-default"
       ];
     };
   };
