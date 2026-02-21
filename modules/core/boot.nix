@@ -10,6 +10,7 @@
 
     initrd.systemd.enable = true;
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    # 6.18 matches Arch — linuxPackages_latest (6.19) breaks NVIDIA open module
+    kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
   };
 }
