@@ -25,15 +25,15 @@
   # Polkit agent for Hyprland
   environment.systemPackages = with pkgs; [
     hyprpolkitagent
-    xfce.thunar
-    xfce.thunar-volman        # Removable media management
-    xfce.thunar-archive-plugin
+    thunar
+    thunar-volman
+    thunar-archive-plugin
   ];
 
   # Thunar support services
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [
+    plugins = with pkgs; [
       thunar-volman
       thunar-archive-plugin
     ];

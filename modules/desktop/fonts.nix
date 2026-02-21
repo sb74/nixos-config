@@ -13,7 +13,6 @@
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-color-emoji
-      noto-fonts-extra
 
       # Font Awesome — icons for Waybar
       font-awesome
