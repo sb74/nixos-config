@@ -15,6 +15,7 @@
       # Dev tools state
       ".local/share/nvim"       # Neovim plugins/state
       ".config/lazygit"
+      ".claude"                 # Claude Code memory + settings
 
       # Desktop state
       ".local/share/walker"     # Launcher history
