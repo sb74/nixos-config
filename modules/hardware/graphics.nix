@@ -23,8 +23,7 @@
       finegrained = false;
     };
 
-    # Use the beta package for latest features (or stable)
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   # Load nvidia driver for Xorg and Wayland
