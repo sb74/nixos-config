@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [
@@ -31,6 +31,9 @@
   ];
 
   networking.hostName = "testbed";
+
+  # RTX 2080 Super (Turing/TU104) — open module is experimental on Turing, use proprietary
+  hardware.nvidia.open = lib.mkForce false;
 
 
   # Agenix secrets — uncomment after first boot once host SSH key is in secrets.nix
