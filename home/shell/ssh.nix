@@ -5,6 +5,7 @@
   # TODO: replace IPs with Unbound/OPNsense hostnames once LAN DNS is sorted
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
 
     matchBlocks = {
       proxmox = {

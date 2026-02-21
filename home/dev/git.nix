@@ -3,9 +3,6 @@
 {
   programs.git = {
     enable = true;
-    userName = "sb74";
-    userEmail = "snbr74@gmail.com";
-
     lfs.enable = true;
 
     signing = {
@@ -13,16 +10,9 @@
       signByDefault = true;
     };
 
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        side-by-side = true;
-        line-numbers = true;
-      };
-    };
-
-    extraConfig = {
+    settings = {
+      user.name = "sb74";
+      user.email = "snbr74@gmail.com";
       gpg.format = "ssh";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
@@ -32,23 +22,33 @@
       diff.colorMoved = "default";
       core.autocrlf = "input";
       url."git@github.com:".insteadOf = "gh:";
-    };
 
-    aliases = {
-      s = "status -sb";
-      l = "log --oneline --graph --decorate -20";
-      la = "log --oneline --graph --decorate --all -30";
-      co = "checkout";
-      cb = "checkout -b";
-      cm = "commit -m";
-      ca = "commit --amend --no-edit";
-      d = "diff";
-      ds = "diff --staged";
-      p = "push";
-      pf = "push --force-with-lease";
-      pl = "pull";
-      unstage = "reset HEAD --";
-      last = "log -1 HEAD --stat";
+      alias = {
+        s = "status -sb";
+        l = "log --oneline --graph --decorate -20";
+        la = "log --oneline --graph --decorate --all -30";
+        co = "checkout";
+        cb = "checkout -b";
+        cm = "commit -m";
+        ca = "commit --amend --no-edit";
+        d = "diff";
+        ds = "diff --staged";
+        p = "push";
+        pf = "push --force-with-lease";
+        pl = "pull";
+        unstage = "reset HEAD --";
+        last = "log -1 HEAD --stat";
+      };
+    };
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate = true;
+      side-by-side = true;
+      line-numbers = true;
     };
   };
 

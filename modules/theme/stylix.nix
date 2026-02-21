@@ -75,6 +75,8 @@
     # Custom configs — disable Stylix theming for these
     stylix.targets.hyprland.enable = false;
     stylix.targets.hyprlock.enable = false;
+    # Firefox profile name unknown until first run — disable Stylix theming
+    stylix.targets.firefox.enable = false;
 
     gtk = {
       enable = true;
