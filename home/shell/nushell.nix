@@ -41,17 +41,7 @@
           vi_normal: block
         }
       }
-    '';
 
-    # Environment config loaded into env.nu
-    extraEnv = ''
-      $env.EDITOR = "nvim"
-      $env.TERMINAL = "ghostty"
-      $env.DOCKER_HOST = "unix:///run/user/1000/podman/podman.sock"
-    '';
-
-    # Zellij integration (no HM enableNushellIntegration for zellij)
-    extraConfig = ''
       # Zellij — attach to/create session 0, or bail if already inside one
       def zj [] {
         if "ZELLIJ" in $env {
@@ -60,6 +50,13 @@
           zellij attach --index 0 --create
         }
       }
+    '';
+
+    # Environment config loaded into env.nu
+    extraEnv = ''
+      $env.EDITOR = "nvim"
+      $env.TERMINAL = "ghostty"
+      $env.DOCKER_HOST = "unix:///run/user/1000/podman/podman.sock"
     '';
 
     # Aliases
