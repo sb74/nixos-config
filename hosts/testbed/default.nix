@@ -32,10 +32,6 @@
 
   networking.hostName = "testbed";
 
-  # SSH enabled for debugging — restrict to LAN only
-  services.openssh.enable = true;
-  services.openssh.settings.PasswordAuthentication = true;
-  networking.firewall.allowedTCPPorts = [ 22 ];
 
   # Agenix secrets — uncomment after first boot once host SSH key is in secrets.nix
   # age.secrets.user-password.file = ../../secrets/user-password-testbed.age;

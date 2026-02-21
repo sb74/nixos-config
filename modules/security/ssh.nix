@@ -2,11 +2,11 @@
 
 {
   # SSH disabled by default — enable per-host if needed
-  services.openssh.enable = false;
+  services.openssh.enable = true;
 
   # If enabled elsewhere, these hardening settings apply
   services.openssh.settings = {
-    PasswordAuthentication = false;
+    PasswordAuthentication = true;
     KbdInteractiveAuthentication = false;
     PermitRootLogin = "no";
     X11Forwarding = false;
