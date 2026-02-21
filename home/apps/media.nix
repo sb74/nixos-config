@@ -14,7 +14,7 @@
   home.packages = with pkgs; [
     imv        # Image viewer
     spotify
-    kdenlive   # Video editor
+    kdePackages.kdenlive   # Video editor
     pinta      # Image editor
   ];
 }
