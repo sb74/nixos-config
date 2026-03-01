@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  # SSH disabled by default — enable per-host if needed
-  services.openssh.enable = true;
-
-  # If enabled elsewhere, these hardening settings apply
+  # SSH hardening — enable per-host with: services.openssh.enable = true;
   services.openssh.settings = {
     PasswordAuthentication = true;
     KbdInteractiveAuthentication = false;

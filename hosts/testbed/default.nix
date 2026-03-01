@@ -32,6 +32,8 @@
 
   networking.hostName = "testbed";
 
+  services.openssh.enable = true;
+
 
 
   # Agenix secrets — uncomment after first boot once host SSH key is in secrets.nix
