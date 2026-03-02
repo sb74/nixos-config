@@ -25,9 +25,6 @@
   # Polkit agent for Hyprland
   environment.systemPackages = with pkgs; [
     hyprpolkitagent
-    thunar
-    thunar-volman
-    thunar-archive-plugin
   ];
 
   # Thunar support services

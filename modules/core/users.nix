@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   users.users.sb74 = {
@@ -14,6 +14,9 @@
       "onepassword"
     ];
     shell = pkgs.bash;
+    # Ghostty launches nushell directly (command = "nu") so bash as login shell
+    # is fine for desktop use. To get nushell over SSH, change to pkgs.nushell
+    # and ensure it's in /etc/shells (programs.nushell.enable handles this).
 
     # Bootstrap password — change after first boot:
     #   1. Get host SSH key: cat /etc/ssh/ssh_host_ed25519_key.pub
