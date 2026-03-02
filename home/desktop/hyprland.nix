@@ -16,6 +16,11 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
 
+    # Use the system-level Hyprland package (set by programs.hyprland.package)
+    # Avoids version mismatch between system and home-manager
+    package = null;
+    portalPackage = null;
+
     # Don't enable systemd integration — UWSM handles it
     systemd.enable = false;
 

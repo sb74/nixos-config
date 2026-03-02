@@ -12,6 +12,7 @@
     ../../modules/core/locale.nix
     ../../modules/core/users.nix
     ../../modules/core/impermanence.nix
+    ../../modules/core/hardening.nix
 
     # Security
     ../../modules/security

@@ -56,7 +56,7 @@
     extraEnv = ''
       $env.EDITOR = "nvim"
       $env.TERMINAL = "ghostty"
-      $env.DOCKER_HOST = "unix:///run/user/1000/podman/podman.sock"
+      $env.DOCKER_HOST = $"unix://($env.XDG_RUNTIME_DIR)/podman/podman.sock"
     '';
 
     # Aliases
