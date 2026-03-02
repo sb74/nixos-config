@@ -12,6 +12,9 @@
     ../../modules/core/locale.nix
     ../../modules/core/users.nix
     ../../modules/core/impermanence.nix
+    ../../modules/core/secureboot.nix
+    ../../modules/core/tpm2.nix
+    ../../modules/core/hardening.nix
 
     # Security
     ../../modules/security
