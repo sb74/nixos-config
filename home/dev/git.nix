@@ -10,7 +10,7 @@
       signByDefault = true;
     };
 
-    settings = {
+    extraConfig = {
       user.name = "sb74";
       user.email = "snbr74@gmail.com";
       gpg.format = "ssh";

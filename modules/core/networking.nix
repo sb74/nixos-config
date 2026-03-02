@@ -7,12 +7,6 @@
     # Disable LLMNR
     networkmanager.connectionConfig."connection.llmnr" = "no";
 
-    # Firewall — deny all inbound by default
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [ ];
-      allowedUDPPorts = [ ];
-    };
   };
 
   # DNS — use NUC's Unbound as primary, public as fallback
