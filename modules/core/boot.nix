@@ -4,8 +4,9 @@
   boot = {
     loader = {
       systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
+      systemd-boot.editor = false;
       systemd-boot.configurationLimit = 10;
+      efi.canTouchEfiVariables = true;
     };
 
     initrd.systemd.enable = true;
