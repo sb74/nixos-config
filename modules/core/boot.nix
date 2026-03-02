@@ -13,4 +13,9 @@
 
     kernelPackages = pkgs.linuxPackages_latest;
   };
+
+  # Faster shutdown when services hang
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
 }

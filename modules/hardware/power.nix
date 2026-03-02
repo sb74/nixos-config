@@ -13,11 +13,12 @@
     criticalPowerAction = "HybridSleep";
   };
 
-  # Lid behaviour
+  # Lid behaviour + logout cleanup
   services.logind = {
     lidSwitch = "suspend";
     lidSwitchExternalPower = "lock";
     lidSwitchDocked = "ignore";
+    killUserProcesses = true;
   };
 
   # Thermald for Intel CPUs
