@@ -40,8 +40,6 @@
   # User-level audio tools
   environment.systemPackages = with pkgs; [
     pamixer      # Volume control CLI
-    playerctl    # Media player control
     wiremix      # Pipewire mixer (TUI)
-    pwvucontrol  # Pipewire volume control (GUI)
   ];
 }

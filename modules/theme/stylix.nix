@@ -10,8 +10,9 @@
 
     # ── Wallpaper ─────────────────────────────────────────────
     # Stylix requires a wallpaper image to generate complementary colors
-    # Replace with your own wallpaper path:
-    #   stylix.image = /path/to/wallpaper.png;
+    # TODO: point this at your NAS wallpaper folder, e.g.:
+    #   image = /mnt/nas/wallpapers/your-wallpaper.png;
+    # (NAS must be mounted before evaluation — use a local copy or symlink if needed)
     # For now, use a generated solid color image
     image = pkgs.runCommand "wallpaper.png" {
       nativeBuildInputs = [ pkgs.imagemagick ];

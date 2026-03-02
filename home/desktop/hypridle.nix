@@ -13,14 +13,8 @@
 
       listener = [
         {
-          # Dim screen after 5 minutes
+          # Lock after 5 minutes
           timeout = 300;
-          on-timeout = "brightnessctl -s set 10";
-          on-resume = "brightnessctl -r";
-        }
-        {
-          # Lock after 5 minutes + 1 second
-          timeout = 301;
           on-timeout = "loginctl lock-session";
         }
         {

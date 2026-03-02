@@ -36,7 +36,6 @@
     ./desktop/screenshots.nix
     ./desktop/clipboard.nix
     ./desktop/wayland-tools.nix
-    ./desktop/wallpaper.nix
     ./desktop/nightlight.nix
   ];
 
