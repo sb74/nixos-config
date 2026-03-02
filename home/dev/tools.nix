@@ -63,7 +63,7 @@
 
   programs.fzf = {
     enable = true;
-    enableBashIntegration = true;
+    enableNushellIntegration = true;
     defaultCommand = "fd --type f --hidden --follow --exclude .git";
     defaultOptions = [
       "--height=40%"
